@@ -11,68 +11,41 @@ $radiusMid: 4px;
 body {
   background-color: $mainBgColor;
   color: $textGrayDark;
-  display: flex;
-  justify-content: center;
   font-family: 'PT Sans', sans-serif;
+  font-weight: 200;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
-.main-app-container {
-  padding-top: 2em;
+.mainAppContainer {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
 }
 
-.main-app-nav {
-  font-size: 2em;
-  text-align: center;
+#mainHeader{
+    background: $accentRed;
+    text-align: center;
+    padding: 4em 0 6em;
 }
 
-.counter-num-label {
-  padding-top: 1em;
-  font-size: 3em;
-  text-align: center;
-  width: 100%;
-}
-
-.counter-even-label {
-  padding-top: 1em;
-  font-size: 0.75em;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.counter-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 3em;
-
-  button {
-    background-color: #CCC;
-    border: none;
-    height: 30px;
-    width: 80px;
-    margin-left: 1em;
-    margin-right: 1em;
-
-    &:hover {
-    }
-  }
+#pageTarget{
+    width: 600px;
+    margin: 0 auto;
+    top: -50px;
+    position: relative;
 }
 
 footer {
-  font-size: 0.75em;
-  text-align: center;
-  padding-top: 10em;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-
-    &:hover {
-    }
-  }
-
-  #heart{
-    color: $accentRed;
-  }
+    font-size: 0.75em;
+    text-align: center;
+    padding-top: 10em;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    color: $textGrayLight;
+    font-size: 1em;
+    width: 100vw;
 }

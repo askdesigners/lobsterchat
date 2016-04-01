@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="38px" viewBox="0 0 64 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-42.000000, -336.000000)">
+            <g transform="translate(41.000000, 336.000000)">
+                <g transform="translate(21.385118, 20.906970) rotate(-12.000000) translate(-21.385118, -20.906970) translate(2.885118, 6.906970)">
+                    <rect fill="#F6F6F6" x="3.17523785e-13" y="1" width="36" height="27" rx="3"></rect>
+                    <path d="M2,3.99263394 L2,3.99263394 L2,25.0073661 C2,25.5538732 2.44842559,26 3.00741988,26 L32.9925801,26 C33.5516761,26 34,25.5537852 34,25.0073661 L34,3.99263394 C34,3.44612681 33.5515744,3 32.9925801,3 L3.00741988,3 C2.44832387,3 2,3.44621484 2,3.99263394 L2,3.99263394 Z M3.17523785e-13,3.99263394 C3.17523785e-13,2.33984785 1.34553934,1 3.00741988,1 L32.9925801,1 C34.6535323,1 36,2.3389342 36,3.99263394 L36,25.0073661 C36,26.6601521 34.6544607,28 32.9925801,28 L3.00741988,28 C1.34646775,28 3.17523785e-13,26.6610658 3.17523785e-13,25.0073661 L3.17523785e-13,3.99263394 L3.17523785e-13,3.99263394 Z" fill="#DFDFDF"></path>
+                    <path d="M5,7 L30,7" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,10 L30,10" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,13 L20,13" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M9,21 L19,21" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,21 L7,21" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,17 L30,17" stroke="#DFDFDF" opacity="0.456564832"></path>
+                </g>
+                <g transform="translate(44.604591, 20.913782) rotate(11.000000) translate(-44.604591, -20.913782) translate(26.104591, 6.913782)">
+                    <rect fill="#F6F6F6" x="1" y="1" width="36" height="27" rx="3"></rect>
+                    <path d="M3,3.99263394 L3,3.99263394 L3,25.0073661 C3,25.5538732 3.44842559,26 4.00741988,26 L33.9925801,26 C34.5516761,26 35,25.5537852 35,25.0073661 L35,3.99263394 C35,3.44612681 34.5515744,3 33.9925801,3 L4.00741988,3 C3.44832387,3 3,3.44621484 3,3.99263394 L3,3.99263394 Z M1,3.99263394 C1,2.33984785 2.34553934,1 4.00741988,1 L33.9925801,1 C35.6535323,1 37,2.3389342 37,3.99263394 L37,25.0073661 C37,26.6601521 35.6544607,28 33.9925801,28 L4.00741988,28 C2.34646775,28 1,26.6610658 1,25.0073661 L1,3.99263394 L1,3.99263394 Z" fill="#DFDFDF"></path>
+                    <path d="M6,7 L31,7" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M6,10 L31,10" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M6,13 L21,13" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M10,21 L20,21" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M6,21 L8,21" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M6,17 L31,17" stroke="#DFDFDF" opacity="0.456564832"></path>
+                </g>
+                <g transform="translate(15.000000, 0.000000)">
+                    <rect fill="#F6F6F6" x="0" y="0" width="36" height="27" rx="3"></rect>
+                    <path d="M2,2.99263394 L2,2.99263394 L2,24.0073661 C2,24.5538732 2.44842559,25 3.00741988,25 L32.9925801,25 C33.5516761,25 34,24.5537852 34,24.0073661 L34,2.99263394 C34,2.44612681 33.5515744,2 32.9925801,2 L3.00741988,2 C2.44832387,2 2,2.44621484 2,2.99263394 L2,2.99263394 Z M0,2.99263394 C0,1.33984785 1.34553934,0 3.00741988,0 L32.9925801,0 C34.6535323,0 36,1.3389342 36,2.99263394 L36,24.0073661 C36,25.6601521 34.6544607,27 32.9925801,27 L3.00741988,27 C1.34646775,27 0,25.6610658 0,24.0073661 L0,2.99263394 L0,2.99263394 Z" fill="#DFDFDF"></path>
+                    <path d="M5,6 L30,6" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,9 L30,9" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,12 L20,12" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M9,20 L19,20" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,20 L7,20" stroke="#DFDFDF" stroke-width="2"></path>
+                    <path d="M5,16 L30,16" stroke="#DFDFDF" opacity="0.456564832"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

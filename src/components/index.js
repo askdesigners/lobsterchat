@@ -1,5 +1,5 @@
 import Counter from './Counter';
-import FooView from './FooView';
-import BarView from './BarView';
+import PostListView from './PostListView';
+import PostDetailView from './PostDetailView';
 import NotFoundView from './NotFoundView';
-export { Counter, FooView, BarView, NotFoundView };
+export { Counter, PostDetailView, PostListView, NotFoundView };

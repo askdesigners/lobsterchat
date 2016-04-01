@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import App from '../containers/App';
-import { NotFoundView, Counter, FooView, BarView } from '../components';
+import { NotFoundView, Counter, PostListView, PostDetailView } from '../components';
 import { browserHistory } from 'react-router';
 
 export default () => {
@@ -12,9 +12,9 @@ export default () => {
         {/* IndexRoute is the initial component that is loaded,
             other routes are loaded according to the component
             property specified here */}
-        <IndexRoute component={Counter}/>
-        <Route path="foo" component={FooView}/>
-        <Route path="bar" component={BarView}/>
+        <IndexRoute component={PostListView}/>
+        <Route path="list" component={PostListView}/>
+        <Route path="post" component={PostDetailView}/>
         <Route path="*" component={NotFoundView} />
       </Route>
     </Router>
