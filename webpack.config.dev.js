@@ -47,7 +47,7 @@ module.exports = {
                 loader: 'style!css!sass'
             },
             {
-                test: /\.jpe?g$|\.gif$|\.png$|\.svg$/i,
+                test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.ttf$|\.woff$|\.woff2$/i,
                 loader: 'file-loader'
             }
         ]
