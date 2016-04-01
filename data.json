@@ -1,0 +1,20 @@
+{
+    "posts":[
+        {
+            "title": "First!",
+            "content":"OMG I'm such a crustacean.",
+            "comments": [
+                "Don't give up. Never give up",
+                "And you smell like one too"
+            ]
+        },
+        {
+            "title": "Second :(",
+            "content":"OMG I'm such a crustacean.",
+            "comments": [
+                "Don't give up. Never give up",
+                "And you smell like one too"
+            ]
+        }
+    ]
+}

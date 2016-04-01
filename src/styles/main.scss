@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+$mainBgColor: #f6f6f6;
+$textGrayDark: #434343;
+$textGrayMid: #B3B3B3;
+$textGrayLight: #D5D5D5;
+$accentRed: #E74C3C;
+$radiusSmall: 3px;
+$radiusMid: 4px;
+
+body {
+  background-color: $mainBgColor;
+  color: $textGrayDark;
+  display: flex;
+  justify-content: center;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.main-app-container {
+  padding-top: 2em;
+}
+
+.main-app-nav {
+  font-size: 2em;
+  text-align: center;
+}
+
+.counter-num-label {
+  padding-top: 1em;
+  font-size: 3em;
+  text-align: center;
+  width: 100%;
+}
+
+.counter-even-label {
+  padding-top: 1em;
+  font-size: 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.counter-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+
+  button {
+    background-color: #CCC;
+    border: none;
+    height: 30px;
+    width: 80px;
+    margin-left: 1em;
+    margin-right: 1em;
+
+    &:hover {
+    }
+  }
+}
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  padding-top: 10em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+    }
+  }
+
+  #heart{
+    color: $accentRed;
+  }
+}
