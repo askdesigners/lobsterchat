@@ -1,9 +1,9 @@
 import { SAVE_POST, UPDATE_DRAFT, SAVE_COMMENT } from '../constants/ActionTypes';
 
-export function updateDraft(content) {
+export function updateDraft(draftText) {
   return {
     type: UPDATE_DRAFT,
-    content
+    draftText
   };
 }
 

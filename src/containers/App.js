@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CounterActions from '../actions/CounterActions';
+import * as PostActions from '../actions/PostActions';
 import { Link } from 'react-router';
 import Footer from '../components/Footer';
 
@@ -18,8 +18,8 @@ export default class App extends Component {
     }
     render() {
         // we can use ES6's object destructuring to effectively 'unpack' our props
-        const {counter, actions, children} = this.props;
-        console.log('app props', this.props);
+        const {posts, draftText, actions, children} = this.props;
+        
         return (
             <div className="mainAppContainer">
                 <div id="mainHeader">
@@ -40,7 +40,7 @@ export default class App extends Component {
                     and cloning the element, followed by passing props in. Notice that
                     those props have been unpacked above! */}
                     {React.Children.map(children, (child) => {
-                        return React.cloneElement(child, { counter, actions });
+                        return React.cloneElement(child, { posts, draftText, actions });
                     }) }
                 </div>
                 <Footer />
@@ -54,10 +54,10 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-    counter: PropTypes.number.isRequired,
+    draftText: PropTypes.string,
+    posts: PropTypes.array,
     actions: PropTypes.object.isRequired,
-    children: PropTypes.element.isRequired,
-    draftText: PropTypes.string
+    children: PropTypes.element.isRequired
 };
 
 /**
@@ -67,7 +67,8 @@ App.propTypes = {
  */
 function mapStateToProps(state) {
     return {
-        counter: state.counter
+        posts: state.posts,
+        draftText: state.draftText,
     };
 }
 
@@ -81,7 +82,7 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(CounterActions, dispatch)
+        actions: bindActionCreators(PostActions, dispatch)
     };
 }
 
