@@ -24,7 +24,7 @@ class PostDetailView extends React.Component {
         let { query } = this.props.location;
         
         return (
-            <div className="viewContainer postDetail">
+            <div className="viewContainer postDetail card">
                 <div className="postContents">
                     <p>{activePost.content}</p>
                 </div>
