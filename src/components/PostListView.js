@@ -1,21 +1,15 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class PostListView extends React.Component {
     
-    constructor(){
-        super();
-        this.update = this.update.bind(this);
-    }
-    
-    update(e){
-        console.log(e.target.value);
+    constructor(props, context){
+        super(props, context);
     }
     
     render(){
-        console.log(this.update)
         return (
             <div className="viewContainer">
-                <PostForm save={this.update}/>
+                <PostForm/>
                 <div className="postList">
                     posts go here
                 </div>
@@ -24,15 +18,37 @@ class PostListView extends React.Component {
     }
 }
 
-const PostForm = (props) => {
-    console.log('inForm', props);
-     
-    return(
-        <div className="card newPostForm">
-            <textarea placeholder="What's up crustacean?" onChange={props.save}></textarea>
-            <button onClick={props.save}>Post!</button>
-        </div>
-    );
+
+class PostForm extends React.Component {
+    
+    constructor(props, context){
+        super();
+        
+        console.log('inform', props, context);
+    }
+    
+    save(e){
+        console.log(e.target.value);
+    }
+    
+    updateDraft(e, a){
+        console.log(e.target.value);
+        this.props.actions.updateDraft(e.target.value);
+    }
+    
+    render(){
+        return (
+            <div className="card newPostForm">
+                <textarea placeholder="What's up crustacean?" onChange={this.updateDraft}></textarea>
+                <button onClick={this.save}>Post!</button>
+            </div>
+        );
+    }
 }
+
+PostForm.propTypes = {
+  draftText: PropTypes.string,
+  actions: PropTypes.object 
+};
 
 export default PostListView;

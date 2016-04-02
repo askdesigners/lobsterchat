@@ -5,3 +5,6 @@
  */
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+export const UPDATE_DRAFT = 'UPDATE_DRAFT';
+export const SAVE_POST = 'SAVE_POST';
+export const SAVE_COMMENT = 'SAVE_COMMENT';

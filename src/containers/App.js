@@ -15,31 +15,11 @@ const logoPath = require('../asset/logo_large.svg');
 export default class App extends Component {
     constructor() {
         super();
-        this.state = {
-            posts: [
-                {
-                    "title": "First!",
-                    "content": "OMG I'm such a crustacean.",
-                    "comments": [
-                        "Don't give up. Never give up",
-                        "And you smell like one too"
-                    ]
-                },
-                {
-                    "title": "Second :(",
-                    "content": "OMG I'm such a crustacean.",
-                    "comments": [
-                        "Don't give up. Never give up",
-                        "And you smell like one too"
-                    ]
-                }
-            ]
-        };
     }
     render() {
         // we can use ES6's object destructuring to effectively 'unpack' our props
-        const { counter, actions, children} = this.props;
-        console.log(this.state);
+        const {counter, actions, children} = this.props;
+        console.log('app props', this.props);
         return (
             <div className="mainAppContainer">
                 <div id="mainHeader">
@@ -69,14 +49,15 @@ export default class App extends Component {
     }
 
     componentWillMount() {
-        console.log()
+        console.log('app will mount')
     }
 }
 
 App.propTypes = {
     counter: PropTypes.number.isRequired,
     actions: PropTypes.object.isRequired,
-    children: PropTypes.element.isRequired
+    children: PropTypes.element.isRequired,
+    draftText: PropTypes.string
 };
 
 /**
