@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { browserHistory, Router, Route, Link } from 'react-router'
+
+const commentsIcon = require('../asset/comments_counter_icon.svg');
 
 class PostListView extends React.Component {
 
@@ -14,10 +17,14 @@ class PostListView extends React.Component {
                 <div className="postList">
                     {self.props.posts.posts.map(function(key, i) {
                         var curPost = self.props.posts.postsById[key]
+                        var path = 'post/'+ key;
                         return (
                             <div key={i} className="card postCard">
-                                <p>{curPost.content}</p>
+                                <p>
+                                    <Link to={path}>{curPost.content}</Link>
+                                </p>
                                 <div className="commentCounter">
+                                    <img src={commentsIcon}/>
                                     {curPost.comments.length ? curPost.comments.length  + ' comments' : 'Needs your comment!' } 
                                 </div>
                             </div>
@@ -56,6 +63,7 @@ class PostForm extends React.Component {
 
 PostForm.propTypes = {
     draftText: PropTypes.string,
+    rows: PropTypes.number,
     actions: PropTypes.object
 };
 

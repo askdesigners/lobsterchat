@@ -14,7 +14,7 @@ export default () => {
             property specified here */}
         <IndexRoute component={PostListView}/>
         <Route path="list" component={PostListView}/>
-        <Route path="post" component={PostDetailView}/>
+        <Route path="post/:postId" component={PostDetailView}/>
         <Route path="*" component={NotFoundView} />
       </Route>
     </Router>

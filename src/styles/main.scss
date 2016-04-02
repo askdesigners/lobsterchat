@@ -48,12 +48,13 @@ body {
         box-shadow: 0 4px 5px rgba(0,0,0,0.2);
         
         textarea{
-            border: 2px solid $borderLight;
+            border: 1px solid $borderLight;
             padding: 15px;
             width: 100%;
-            height: 100px;
+            min-height: 100px;
             font-size: 1.2em;
             border-radius: $radiusMid;
+            resize: none;
             
             &:placeholder{
                 color: $textGrayMid;
@@ -69,7 +70,7 @@ body {
             border-radius: $radiusMid;
             font-size: 1.25em;
             position: relative;
-            display: inline-block;
+            display: inherit;
             width: auto;
             cursor: pointer;
         }
@@ -89,7 +90,7 @@ body {
             
             p{
                 padding: 0 0 15px;
-                margin: 0 0 15px;
+                margin: 0 0 8px;
                 font-size: 1.25em;
                 border-bottom: 1px solid $borderLight;
                 color: $textGrayDark;
@@ -98,6 +99,14 @@ body {
             
             .commentCounter{
                 color: $textGrayLight;
+                height: 24px;
+                line-height: 24px;
+                
+                img{
+                    position: relative;
+                    top: 6px;
+                    margin-right: 10px;
+                }
             }
         }
     }
