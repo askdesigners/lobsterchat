@@ -28,19 +28,21 @@ class PostDetailView extends React.Component {
                 <div className="postContents">
                     <p>{activePost.content}</p>
                 </div>
-                <div className="commentForm">
-                    <textarea placeholder="What's up crustacean?" onChange={this.updateDraftComment.bind(this) } ></textarea>
-                    <button onClick={this.saveComment.bind(this) }>Post!</button>
-                </div>
                 <div className="commentSection">
-                    {activePost.comments.map(function(key, i) {
-                            var curComment = activePost.comments[i]
-                            return (
-                                <div key={i} className="singleComment">
-                                    <p> {curComment} </p>
-                                </div>
-                            );
-                        }) }
+                    <div className="commentList">
+                        {activePost.comments.map(function(key, i) {
+                                var curComment = activePost.comments[i]
+                                return (
+                                    <div key={i} className="singleComment">
+                                        <p> {curComment} </p>
+                                    </div>
+                                );
+                            }) }
+                    </div>
+                    <div className="commentForm">
+                        <textarea placeholder="Your comment..." onChange={this.updateDraftComment.bind(this) } ></textarea>
+                        <button className="chunkyButton" onClick={this.saveComment.bind(this) }>Add</button>
+                    </div>
                 </div>
             </div>
         );

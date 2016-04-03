@@ -55,7 +55,7 @@ class PostForm extends React.Component {
         return (
             <div className="card newPostForm">
                 <textarea placeholder="What's up crustacean?" onChange={this.updateDraft.bind(this) } ></textarea>
-                <button onClick={this.save.bind(this) }>Post!</button>
+                <button className="chunkyButton" onClick={this.save.bind(this) }>Post!</button>
             </div>
         );
     }

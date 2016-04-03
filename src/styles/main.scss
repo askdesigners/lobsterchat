@@ -1,9 +1,11 @@
 $mainBgColor: #f6f6f6;
 $borderLight: #DFDFDF;
 $textGrayDark: #434343;
+$textGreyMidDark: #818181;
 $textGrayMid: #B3B3B3;
 $textGrayLight: #D5D5D5;
 $accentRed: #E74C3C;
+$dropRed: #CD3728;
 $radiusSmall: 3px;
 $radiusMid: 4px;
 
@@ -28,6 +30,29 @@ body {
   width: 100vw;
   min-height: 100vh;
   position: relative;
+  padding-bottom: 5em;
+}
+
+.chunkyButton{
+    background: $accentRed;
+    color: white;
+    border: none;
+    border-radius: $radiusMid;
+    font-size: 1.25em;
+    cursor: pointer;
+    outline: none;
+    top: 0;
+    
+    &:hover{
+        box-shadow: 0 2px 0 0 $dropRed;
+        top: -2px; 
+    }
+   
+    &:active{
+        background: $dropRed;
+        box-shadow: inset 0 2px 0 0 rgba(0,0,0,0.15);
+        top: 0; 
+    }
 }
 
 #mainHeader{
@@ -63,16 +88,10 @@ body {
         
         button{
             margin: 15px auto 0 ;
-            background: $accentRed;
-            color: white;
             padding: 13px 100px;
-            border: none;
-            border-radius: $radiusMid;
-            font-size: 1.25em;
             position: relative;
             display: inherit;
             width: auto;
-            cursor: pointer;
         }
     }
     
@@ -80,6 +99,8 @@ body {
         background: white;
         border-radius: $radiusSmall;
         padding: 15px;
+        z-index: 100;
+        position: relative;
     }
     
     .postList{
@@ -113,17 +134,94 @@ body {
     
     .postDetail{
         box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+        padding: 20px;
+        
+        .postContents{
+            font-size: 1.55em;
+            margin-bottom: 25px;
+            
+            p{
+                margin: 0;
+            }
+        }
+        .commentSection{
+            background: $mainBgColor;
+            padding: 25px;
+            position: relative;
+            
+            &:before{
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 15px;
+                border-width: 0 20px 15px 0;
+                z-index: 1;
+                position: absolute;
+                border-style: solid;
+                border-color: $mainBgColor transparent;
+                display: block;
+                width: 0;
+                top: -30px;
+                left: 0px;
+            }
+            
+            .commentList{
+                font-size: 1em;
+                color: $textGreyMidDark;
+                
+                .singleComment{
+                    border-bottom: 1px solid $borderLight;
+                    padding: 0 0 15px 0;
+                    margin-bottom: 15px;
+                    
+                    &:last-child{
+                        margin-bottom: 25px;
+                    }
+                    
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+            .commentForm{
+                display: flex;
+                justify-content: space-between;
+                
+                textarea{
+                    border: 1px solid $borderLight;
+                    padding: 12px 12px 12px 45px;
+                    width: 79%;
+                    height: 55px;
+                    font-size: 1.2em;
+                    border-radius: $radiusMid;
+                    resize: none;
+                    background: url('../asset/comments_counter_icon.svg') no-repeat 15px 18px white;
+                    outline: none;
+                    transition: border;
+                    
+                    &:focus{
+                        border: 1px solid $textGrayMid;
+                    } 
+                }
+                button{
+                    width: 18%;
+                    padding: 13px;
+                    position: relative;
+                    display: inline-block;
+                }
+            }
+        }
     }
 }
 
 footer {
     font-size: 0.75em;
     text-align: center;
-    padding-top: 10em;
     position: absolute;
     bottom: 20px;
     text-align: center;
     color: $textGrayLight;
     font-size: 1em;
     width: 100vw;
+    z-index: 10;
 }
