@@ -20,6 +20,7 @@ body {
   font-size: 16px;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
   
   * {
       box-sizing: border-box;
@@ -32,7 +33,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  padding-bottom: 5em;
+  padding-bottom: 7em;
 }
 
 .chunkyButton{
@@ -44,16 +45,21 @@ body {
     cursor: pointer;
     outline: none;
     top: 0;
+    transition: opacity 0.2s;
     
-    &:hover{
+    &:hover:enabled{
         box-shadow: 0 2px 0 0 $dropRed;
         top: -2px; 
     }
    
-    &:active{
+    &:active:enabled{
         background: $dropRed;
         box-shadow: inset 0 2px 0 0 rgba(0,0,0,0.15);
         top: 0; 
+    }
+    
+    &:disabled{
+        opacity: 0.8;
     }
 }
 
@@ -257,4 +263,18 @@ footer {
     font-size: 1em;
     width: 100vw;
     z-index: 10;
+    
+    p{
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    hr{
+        max-width: 155px;
+        margin: 0 auto 15px auto;
+        background: $borderLight;
+        height: 1px;
+        outline: none;
+        border: 0;
+    }
 }

@@ -43,7 +43,7 @@ class PostDetailView extends React.Component {
                     </div>
                     <div className="commentForm">
                         <textarea className="inputArea" placeholder="Your comment..." value={this.props.draftCommentText} onChange={this.updateDraftComment.bind(this) } ></textarea>
-                        <button className="chunkyButton" onClick={this.saveComment.bind(this) }>Add</button>
+                        <button className="chunkyButton" disabled={!this.props.draftCommentText} onClick={this.saveComment.bind(this) }>Add</button>
                     </div>
                 </div>
             </div>
