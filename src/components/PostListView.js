@@ -27,8 +27,6 @@ class PostListView extends React.Component {
     render() {
         const self = this;
         
-        console.log('this.context', this.context);
-        
         return (
             <div className="viewContainer">
                 <PostForm actions={self.props.actions} draftText={self.props.draftText}/>

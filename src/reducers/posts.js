@@ -50,7 +50,7 @@ export default function posts(state = initialState, action) {
                 comments: []
             };
             return {
-                posts: state.posts.concat(newId),
+                posts: [newId].concat(state.posts),
                 postsById: updatedposts,
                 draftText: ''
             };
