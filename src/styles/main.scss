@@ -6,6 +6,8 @@ $textGrayMid: #B3B3B3;
 $textGrayLight: #D5D5D5;
 $accentRed: #E74C3C;
 $dropRed: #CD3728;
+$dropRedHover: #B5281A;
+$dropRedPressed: #A52215;
 $radiusSmall: 3px;
 $radiusMid: 4px;
 
@@ -55,10 +57,55 @@ body {
     }
 }
 
+.inputArea{
+    border: 1px solid $borderLight;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: $radiusMid;
+    resize: none;
+    transition: border 0.1s;
+    outline: none;                
+
+    &:placeholder{
+        color: $textGrayMid;
+    }
+    
+    &:focus{
+        border: 1px solid $textGrayMid;
+    } 
+}
+
 #mainHeader{
     background: $accentRed;
     text-align: center;
     padding: 4em 0 5em;
+    position: relative;
+    
+    .backButton{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: url(../asset/back_arrow.svg) no-repeat 38px 37px $dropRed;
+        border-radius: $radiusMid; 
+        position: absolute;
+        left: 55px; 
+        cursor: pointer;
+        transition: background 0.1s;
+        
+        &:hover{
+            background-color: $dropRedHover; 
+        }
+        
+        &:active{
+            background-color: $dropRedPressed;
+        }
+        
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
 #pageTarget{
@@ -73,17 +120,8 @@ body {
         box-shadow: 0 4px 5px rgba(0,0,0,0.2);
         
         textarea{
-            border: 1px solid $borderLight;
-            padding: 15px;
             width: 100%;
             min-height: 100px;
-            font-size: 1.2em;
-            border-radius: $radiusMid;
-            resize: none;
-            
-            &:placeholder{
-                color: $textGrayMid;
-            }
         }
         
         button{
@@ -114,8 +152,13 @@ body {
                 margin: 0 0 8px;
                 font-size: 1.25em;
                 border-bottom: 1px solid $borderLight;
-                color: $textGrayDark;
                 font-weight: 400;
+                
+                a{
+                    color: $textGrayDark;
+                    text-decoration: none;
+                    display: block;
+                }
             }
             
             .commentCounter{
@@ -188,20 +231,10 @@ body {
                 justify-content: space-between;
                 
                 textarea{
-                    border: 1px solid $borderLight;
                     padding: 12px 12px 12px 45px;
                     width: 79%;
                     height: 55px;
-                    font-size: 1.2em;
-                    border-radius: $radiusMid;
-                    resize: none;
                     background: url('../asset/comments_counter_icon.svg') no-repeat 15px 18px white;
-                    outline: none;
-                    transition: border;
-                    
-                    &:focus{
-                        border: 1px solid $textGrayMid;
-                    } 
                 }
                 button{
                     width: 18%;

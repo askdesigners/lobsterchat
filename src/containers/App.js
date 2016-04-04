@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as PostActions from '../actions/PostActions';
+import { If, Then, Else } from 'react-if';
 import { Link } from 'react-router';
+import * as PostActions from '../actions/PostActions';
 import Footer from '../components/Footer';
 
 const logoPath = require('../asset/logo_large.svg');
@@ -18,29 +19,28 @@ export default class App extends Component {
     }
     render() {
         // we can use ES6's object destructuring to effectively 'unpack' our props
-        const {posts, draftText, actions, children} = this.props;
-        
+        const { draftText, draftCommentText, posts, postsById, actions, children } = this.props;
+
         return (
             <div className="mainAppContainer">
                 <div id="mainHeader">
                     <div className="logo">
+                        <If condition={ this.props.location.pathname !== '/' }>
+                            <Then>
+                                <div className="backButton">
+                                    <Link to='/'></Link>
+                                </div>
+                            </Then>
+                        </If>
                         <img src={logoPath} alt=""/>
                     </div>
                 </div>
-                {/* 
-                <div className="main-app-nav">
-                    <div>
-                        <span><Link to="/">List</Link></span>
-                        <span><Link to="/post">Post</Link></span>
-                    </div>
-                </div>
-                */}
                 <div id="pageTarget">
                     {/* Here's a trick: we pass those props into the children by mapping
                     and cloning the element, followed by passing props in. Notice that
                     those props have been unpacked above! */}
                     {React.Children.map(children, (child) => {
-                        return React.cloneElement(child, { posts, draftText, actions });
+                        return React.cloneElement(child, { draftText, draftCommentText, posts, postsById, actions });
                     }) }
                 </div>
                 <Footer />
@@ -55,7 +55,9 @@ export default class App extends Component {
 
 App.propTypes = {
     draftText: PropTypes.string,
+    draftCommentText: PropTypes.string,
     posts: PropTypes.array,
+    postsById: PropTypes.object,
     actions: PropTypes.object.isRequired,
     children: PropTypes.element.isRequired
 };
@@ -66,10 +68,13 @@ App.propTypes = {
  * object. By mapping it to props, we can pass it to the child component Counter.
  */
 function mapStateToProps(state) {
-    return {
-        posts: state.posts,
-        draftText: state.draftText,
+    var obj = {
+        posts: state.posts.posts,
+        postsById: state.posts.postsById,
+        draftText: state.posts.draftText,
+        draftCommentText: state.posts.draftCommentText
     };
+    return obj;
 }
 
 /**

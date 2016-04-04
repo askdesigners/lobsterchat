@@ -9,17 +9,17 @@ class PostDetailView extends React.Component {
     }
 
     saveComment(e) {
-        this.props.actions.saveComment();
+        this.props.actions.saveComment(this.props.params.postId);
     }
 
     updateDraftComment(e) {
-        this.props.actions.updateDraftComment();
+        this.props.actions.updateDraftComment(e.target.value);
     }
     
     render() {
         console.log('in detail render', this.props);
         
-        let activePost = this.props.posts.postsById[this.props.params.postId];
+        let activePost = this.props.postsById[this.props.params.postId];
         let { postId } = this.props.params;
         let { query } = this.props.location;
         
@@ -40,7 +40,7 @@ class PostDetailView extends React.Component {
                             }) }
                     </div>
                     <div className="commentForm">
-                        <textarea placeholder="Your comment..." onChange={this.updateDraftComment.bind(this) } ></textarea>
+                        <textarea className="inputArea" placeholder="Your comment..." onChange={this.updateDraftComment.bind(this) } ></textarea>
                         <button className="chunkyButton" onClick={this.saveComment.bind(this) }>Add</button>
                     </div>
                 </div>

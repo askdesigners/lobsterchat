@@ -1,7 +1,8 @@
-import { UPDATE_DRAFT, SAVE_POST, SAVE_COMMENT } from '../constants/ActionTypes';
+import { UPDATE_DRAFT, SAVE_POST, UPDATE_DRAFT_COMMENT, SAVE_COMMENT } from '../constants/ActionTypes';
 
 const initialState = {
     draftText: "",
+    draftCommentText: "",
     posts: [1, 2, 3],
     postsById: {
         1: {
@@ -39,6 +40,7 @@ export default function posts(state = initialState, action) {
                 ...state,
                 draftText: action.draftText
             };
+            
         case SAVE_POST:
             const newId = state.posts[state.posts.length - 1] + 1;
             const updatedposts = state.postsById;
@@ -47,22 +49,31 @@ export default function posts(state = initialState, action) {
                 content: state.draftText,
                 comments: []
             };
-            console.info('----- > SAVING', newId, updatedposts);
             return {
                 posts: state.posts.concat(newId),
                 postsById: updatedposts,
                 draftText: ''
             };
+            
+        case UPDATE_DRAFT_COMMENT:
+            return {
+                ...state,
+                draftCommentText: action.draftCommentText
+            };
+            
         case SAVE_COMMENT:
             const selectedPost = state.postsById[action.selectedPost];
-            selectedPost.comments.concat(action.comment);
+            let postsCopy = Object.assign({}, state.postsById);
+            selectedPost.comments = selectedPost.comments.concat(state.draftCommentText);
+            postsCopy[selectedPost.id] = selectedPost;
+            console.log('in saver', postsCopy);
+            
             return {
-                postsById: {
-                    [selectedPost.id]: selectedPost
-                },
-                posts: state.posts,
-                draftText: state.draftText
+                ...state,
+                postsById: postsCopy,
+                draftCommentText: ""
             }
+            
         default:
             return state;
     }

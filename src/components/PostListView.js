@@ -11,12 +11,13 @@ class PostListView extends React.Component {
 
     render() {
         const self = this;
+        console.log('list render props', this.props)
         return (
             <div className="viewContainer">
                 <PostForm actions={self.props.actions}/>
                 <div className="postList">
-                    {self.props.posts.posts.map(function(key, i) {
-                        var curPost = self.props.posts.postsById[key]
+                    {self.props.posts.map(function(key, i) {
+                        var curPost = self.props.postsById[key]
                         var path = 'post/'+ key;
                         return (
                             <div key={i} className="card postCard">
@@ -44,6 +45,7 @@ class PostForm extends React.Component {
     }
 
     save(e) {
+        console.log(this);
         this.props.actions.savePost();
     }
 
@@ -54,8 +56,8 @@ class PostForm extends React.Component {
     render() {
         return (
             <div className="card newPostForm">
-                <textarea placeholder="What's up crustacean?" onChange={this.updateDraft.bind(this) } ></textarea>
-                <button className="chunkyButton" onClick={this.save.bind(this) }>Post!</button>
+                <textarea className="inputArea" placeholder="What's up crustacean?" onChange={this.updateDraft.bind(this)} ></textarea>
+                <button className="chunkyButton" onClick={this.save.bind(this)}>Post!</button>
             </div>
         );
     }
