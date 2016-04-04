@@ -180,6 +180,24 @@ body {
             }
         }
     }
+    .noPosts{
+        width: 180px;
+        margin: 80px auto 0;
+        text-align: center;
+        
+        p{
+            font-size: 1.1em;
+            color: $textGrayMid;
+            margin-top: 10px;
+        }
+        
+        img{
+            max-width: 130px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+    }
     
     .postDetail{
         box-shadow: 0 4px 5px rgba(0,0,0,0.2);

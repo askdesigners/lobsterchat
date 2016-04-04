@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { browserHistory, Router, Route, Link } from 'react-router'
 
 const commentsIcon = require('../asset/comments_counter_icon.svg');
+const noPostsImg = require('../asset/blankslate_illustration_small.svg');
 
 class PostListView extends React.Component {
 
@@ -30,23 +31,31 @@ class PostListView extends React.Component {
         return (
             <div className="viewContainer">
                 <PostForm actions={self.props.actions} draftText={self.props.draftText}/>
-                <div className="postList">
-                    {self.props.posts.map(function(key, i) {
-                        var curPost = self.props.postsById[key]
-                        var path = 'post/'+ key;
-                        return (
-                            <div key={i} className="card postCard">
-                                <p>
-                                    <Link to={path}>{self.truncatePost(curPost.content)}</Link>
-                                </p>
-                                <div className="commentCounter">
-                                    <img src={commentsIcon}/>
-                                    {curPost.comments.length ? curPost.comments.length  + ' comments' : 'Needs your comment!' } 
+                { self.props.posts.length > 0 &&
+                    <div className="postList">
+                        {self.props.posts.map(function(key, i) {
+                            var curPost = self.props.postsById[key]
+                            var path = 'post/'+ key;
+                            return (
+                                <div key={i} className="card postCard">
+                                    <p>
+                                        <Link to={path}>{self.truncatePost(curPost.content)}</Link>
+                                    </p>
+                                    <div className="commentCounter">
+                                        <img src={commentsIcon}/>
+                                        {curPost.comments.length ? curPost.comments.length  + ' comments' : 'Needs your comment!' } 
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    }) }
-                </div> 
+                            );
+                        }) }
+                    </div> 
+                }
+                { self.props.posts.length === 0 &&
+                    <div className="noPosts">
+                        <img src={noPostsImg}/>
+                        <p>I guess there are no posts today, yet!</p>
+                    </div>
+                }
             </div>
         );
     }
