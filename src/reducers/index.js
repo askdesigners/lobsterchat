@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
 import posts from './posts';
 
 /* Added routeReducer from react-router-redux */
@@ -20,7 +19,6 @@ import { routeReducer } from 'react-router-redux';
  */
 
 const rootReducer = combineReducers({
-  counter, // you might be used to: counter: counter,
   routing: routeReducer, // add routeReducer as a prop on state
   posts
 });

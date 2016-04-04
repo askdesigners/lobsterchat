@@ -8,10 +8,27 @@ class PostListView extends React.Component {
     constructor(props, context) {
         super(props, context);
     }
+    
+    truncatePost(txt){
+        if(txt.length > 197){
+            let short = txt.slice(0, 197)
+            for (var ll = short.length-1; ll > 0; ll--) {
+                if(short[ll] === ' ' && short[ll-1] !== '.'){
+                    short = txt.slice(0, ll);
+                    break;
+                }
+            }
+            return short + '\u2026';
+        } else {
+            return txt;
+        }
+    }
 
     render() {
         const self = this;
-        console.log('list render props', this.props)
+        
+        console.log('this.context', this.context);
+        
         return (
             <div className="viewContainer">
                 <PostForm actions={self.props.actions} draftText={self.props.draftText}/>
@@ -22,7 +39,7 @@ class PostListView extends React.Component {
                         return (
                             <div key={i} className="card postCard">
                                 <p>
-                                    <Link to={path}>{curPost.content}</Link>
+                                    <Link to={path}>{self.truncatePost(curPost.content)}</Link>
                                 </p>
                                 <div className="commentCounter">
                                     <img src={commentsIcon}/>

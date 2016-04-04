@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import App from '../containers/App';
-import { NotFoundView, Counter, PostListView, PostDetailView } from '../components';
+import { NotFoundView, PostListView, PostDetailView } from '../components';
 import { browserHistory } from 'react-router';
 
 export default () => {
