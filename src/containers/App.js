@@ -49,7 +49,6 @@ export default class App extends Component {
     }
 
     componentWillMount() {
-        console.log('app will mount')
     }
 }
 
@@ -67,15 +66,12 @@ App.propTypes = {
  * state in this Redux application. 'counter' is a property within our store/state
  * object. By mapping it to props, we can pass it to the child component Counter.
  */
-function mapStateToProps(state) {
-    var obj = {
-        posts: state.posts.posts,
-        postsById: state.posts.postsById,
-        draftText: state.posts.draftText,
-        draftCommentText: state.posts.draftCommentText
-    };
-    return obj;
-}
+const mapStateToProps = (state) => ({
+    posts: state.posts.posts,
+    postsById: state.posts.postsById,
+    draftText: state.posts.draftText,
+    draftCommentText: state.posts.draftCommentText
+})
 
 /**
  * Turns an object whose values are 'action creators' into an object with the same

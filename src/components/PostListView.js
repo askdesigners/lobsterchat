@@ -14,7 +14,7 @@ class PostListView extends React.Component {
         console.log('list render props', this.props)
         return (
             <div className="viewContainer">
-                <PostForm actions={self.props.actions}/>
+                <PostForm actions={self.props.actions} draftText={self.props.draftText}/>
                 <div className="postList">
                     {self.props.posts.map(function(key, i) {
                         var curPost = self.props.postsById[key]
@@ -45,18 +45,19 @@ class PostForm extends React.Component {
     }
 
     save(e) {
-        console.log(this);
-        this.props.actions.savePost();
+        if(this.props.draftText !== ""){
+            this.props.actions.savePost();
+        }
     }
 
     updateDraft(e) {
         this.props.actions.updateDraft(e.target.value);
     }
 
-    render() {
+    render() {        
         return (
             <div className="card newPostForm">
-                <textarea className="inputArea" placeholder="What's up crustacean?" onChange={this.updateDraft.bind(this)} ></textarea>
+                <textarea className="inputArea" value={this.props.draftText} placeholder="What's up crustacean?" onChange={this.updateDraft.bind(this)} ></textarea>
                 <button className="chunkyButton" onClick={this.save.bind(this)}>Post!</button>
             </div>
         );

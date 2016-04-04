@@ -9,7 +9,9 @@ class PostDetailView extends React.Component {
     }
 
     saveComment(e) {
-        this.props.actions.saveComment(this.props.params.postId);
+        if(this.props.draftCommentText !== ""){
+            this.props.actions.saveComment(this.props.params.postId);
+        }
     }
 
     updateDraftComment(e) {
@@ -40,7 +42,7 @@ class PostDetailView extends React.Component {
                             }) }
                     </div>
                     <div className="commentForm">
-                        <textarea className="inputArea" placeholder="Your comment..." onChange={this.updateDraftComment.bind(this) } ></textarea>
+                        <textarea className="inputArea" placeholder="Your comment..." value={this.props.draftCommentText} onChange={this.updateDraftComment.bind(this) } ></textarea>
                         <button className="chunkyButton" onClick={this.saveComment.bind(this) }>Add</button>
                     </div>
                 </div>
