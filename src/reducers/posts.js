@@ -3,13 +3,24 @@ import { UPDATE_DRAFT, SAVE_POST, UPDATE_DRAFT_COMMENT, SAVE_COMMENT } from '../
 const initialState = {
     draftText: "",
     draftCommentText: "",
-    posts: [],
+    posts: [1],
     postsById: {
-        
+        1: {
+            id: 1,
+            content: "This is a test post!",
+            comments: []
+        }
     }
 };
 
-export default function posts(state = initialState, action) {
+const blankState = {
+    draftText: "",
+    draftCommentText: "",
+    posts: [],
+    postsById: {}
+};
+
+export default function posts(state = blankState, action) {
 
     switch (action.type) {
         case UPDATE_DRAFT:
@@ -19,8 +30,13 @@ export default function posts(state = initialState, action) {
             };
             
         case SAVE_POST:
-            const newId = state.posts[state.posts.length - 1] + 1;
-            const updatedposts = state.postsById;
+            let newId = state.posts[state.posts.length - 1] + 1;
+            let updatedposts = state.postsById;
+            
+            if(isNaN(newId)){
+                newId = 1;
+            }
+            
             updatedposts[newId] = {
                 id: newId,
                 content: state.draftText,
