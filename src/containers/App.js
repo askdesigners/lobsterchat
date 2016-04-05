@@ -20,8 +20,6 @@ export default class App extends Component {
     render() {
         // we can use ES6's object destructuring to effectively 'unpack' our props
         const { draftText, draftCommentText, posts, postsById, actions, children } = this.props;
-
-        console.log('path', this.props.location.pathname);
         
         return (
             <div className="mainAppContainer">
@@ -44,9 +42,6 @@ export default class App extends Component {
                 <Footer />
             </div>
         );
-    }
-
-    componentWillMount() {
     }
 }
 
