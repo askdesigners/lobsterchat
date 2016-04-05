@@ -21,19 +21,17 @@ export default class App extends Component {
         // we can use ES6's object destructuring to effectively 'unpack' our props
         const { draftText, draftCommentText, posts, postsById, actions, children } = this.props;
 
+        console.log('path', this.props.location.pathname);
+        
         return (
             <div className="mainAppContainer">
                 <div id="mainHeader">
-                    <div className="logo">
-                        <If condition={ this.props.location.pathname !== '/' }>
-                            <Then>
-                                <div className="backButton">
-                                    <Link to='/'></Link>
-                                </div>
-                            </Then>
-                        </If>
-                        <img src={logoPath} alt=""/>
-                    </div>
+                    <div className="logo"> </div>
+                    { this.props.location.pathname !== '/' &&
+                        <div className="backButton">
+                            <Link to='/'></Link>
+                        </div>
+                    }
                 </div>
                 <div id="pageTarget">
                     {/* Here's a trick: we pass those props into the children by mapping

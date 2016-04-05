@@ -30,12 +30,13 @@ export default function posts(state = blankState, action) {
             };
             
         case SAVE_POST:
-            let newId = state.posts[state.posts.length - 1] + 1;
-            let updatedposts = state.postsById;
-            
-            if(isNaN(newId)){
+            var newId;
+            if(state.posts.length > 0){
+                newId = state.posts[0] + 1;
+            } else {
                 newId = 1;
             }
+            let updatedposts = state.postsById;
             
             updatedposts[newId] = {
                 id: newId,
