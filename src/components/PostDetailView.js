@@ -8,10 +8,24 @@ class PostDetailView extends React.Component {
         super(props, context);
     }
 
-    saveComment(e) {
+    saveComment() {
         if(this.props.draftCommentText !== ""){
             this.props.actions.saveComment(this.props.params.postId);
         }
+    }
+    
+    _handleKey(e){
+        if(e.code === 'Enter'){
+            this.saveComment();
+        }
+    }
+
+    componentWillMount() {
+        document.addEventListener("keydown", this._handleKey.bind(this), false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this._handleKey.bind(this), false);
     }
 
     updateDraftComment(e) {
