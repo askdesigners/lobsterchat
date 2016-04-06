@@ -60,7 +60,6 @@ export default function posts(state = blankState, action) {
             let postsCopy = Object.assign({}, state.postsById);
             selectedPost.comments = selectedPost.comments.concat(state.draftCommentText);
             postsCopy[selectedPost.id] = selectedPost;
-            console.log('in saver', postsCopy);
             
             return {
                 ...state,
